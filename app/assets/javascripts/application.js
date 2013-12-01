@@ -30,6 +30,7 @@
   var swipeAngle = null;
   var swipeDirection = null;
 
+
   // The 4 Touch Event Handlers
 
   // NOTE: the touchStart handler should also receive the ID of the triggering element
@@ -39,7 +40,6 @@
   function touchStart(event,elementID) {
     // disable the standard ability to select the touched object
     event.preventDefault();
-    console.log('starting touchStart');
     // get the total number of fingers touching the screen
     fingerCount = event.touches.length;
     // since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
@@ -74,7 +74,7 @@
       swipeLength = Math.round(Math.sqrt(Math.pow(curX - startX,2) + Math.pow(curY - startY,2)));
       // if the user swiped more than the minimum length, perform the appropriate action
       if ( swipeLength >= minLength ) {
-        caluculateAngle();
+        calculateAngle();
         determineSwipeDirection();
         processingRoutine();
       }
@@ -95,7 +95,7 @@
     triggerElementID = null;
   }
 
-  function caluculateAngle() {
+  function calculateAngle() {
     var X = startX-curX;
     var Y = curY-startY;
     var Z = Math.round(Math.sqrt(Math.pow(X,2)+Math.pow(Y,2))); //the distance - rounded - in pixels
@@ -120,32 +120,50 @@
 
   function processingRoutine() {
     var swipedElement = document.getElementById(triggerElementID);
-    if ( swipeDirection == 'left' ) {
-      // REPLACE WITH YOUR ROUTINES
-      //swipedElement.style.backgroundColor = 'orange';
-      console.log('swiped left');
-    } else if ( swipeDirection == 'right' ) {
-      // REPLACE WITH YOUR ROUTINES
-      //swipedElement.style.backgroundColor = 'green';
+    markerHandles = window.markerHandles;
+    lastSelectedMarker = window.lastSelectedMarker;
+    chicken = window.chicken;
+    octopus = window.octopus;
+    starfish = window.starfish;
+    streetView = window.streetView;
+    markerArray = window.markerArray;
+    showStreetView = window.showStreetView;
+    panorama = window.panorama;
+    bearings = window.bearings;
+
+    if ( swipeDirection == 'right' ) {
+      console.log(markerHandles);
+      console.log(markerHandles[0]);
       console.log('swiped right');
-    } else if ( swipeDirection == 'up' ) {
-      // REPLACE WITH YOUR ROUTINES
-      //swipedElement.style.backgroundColor = 'maroon';
+
+      if (lastSelectedMarker == markerHandles[0]){
+        lastSelectedMarker.setIcon(starfish);}
+      else {lastSelectedMarker.setIcon(octopus);}
+      if (lastSelectedMarker.myIndex == markerHandles.length-1) {
+        currentIndex = 0;
+      }
+      else {currentIndex = lastSelectedMarker.myIndex + 1;}
+      streetView.getPanoramaByLocation(markerArray[currentIndex], 50, showStreetView);
+      panorama.setPov({ heading: bearings[currentIndex], pitch: 0});
+      panorama.setVisible(true);
+      console.log('current index is ' + currentIndex);
+      currentMarker = markerHandles[currentIndex];
+      currentMarker.setIcon(chicken);
+      lastSelectedMarker = currentMarker;
+      $('#directions_box').empty();
+      $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[currentIndex] + '</h3>');
+    } else if ( swipeDirection == 'left' ) {
+      console.log('swiped left');
+    }
+    else if ( swipeDirection == 'up' ) {
       console.log('swiped up');
     } else if ( swipeDirection == 'down' ) {
-      // REPLACE WITH YOUR ROUTINES
-      //swipedElement.style.backgroundColor = 'blue';
       console.log('swiped down');
     }
   }
 
 $(function(){
   var svSwipe = document.getElementById('pano');
-  //alert('I am here!');
-  //svSwipe.ontouchstart = touchStart(event,'swipeBox');
-  //svSwipe.ontouchmove = touchMove(event);
-  //svSwipe.ontouchend = touchEnd(event);
-  //svSwipe.ontouchcancel = touchCancel(event);
 
   svSwipe.addEventListener('touchstart', function(event){
     touchStart(event, 'pano');
@@ -159,21 +177,7 @@ $(function(){
   svSwipe.addEventListener('touchcancel', function(event){
     touchCancel(event);
   });
-  /*
-  $swipebox = $('#swipebox');
-  $swipebox.bind('touchstart', function(){
-    touchStart(this.event, 'swipeBox');
-  });
-  $swipebox.bind('touchmove', function(){
-    touchMove(this.event);
-  });
-  $swipebox.bind('touchend', function(){
-    touchend(this.event);
-  });
-  $swipebox.bind('touchcancel', function(){
-    touchCancel(this.event);
-  });
-  */
+
 
 });
 

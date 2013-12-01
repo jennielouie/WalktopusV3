@@ -4,6 +4,11 @@ streetView = new google.maps.StreetViewService()
 bearings = []
 panorama = 0
 walkMap = 0
+markerHandles = []
+lastSelectedMarker = 0
+
+currentIndex = 0
+currentMarker = 0
 
 # Initialize map and displays, then calls mapRoute function
 initialize = ()->
@@ -12,8 +17,7 @@ initialize = ()->
   mapOptions = {
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    center: toronto,
-    draggable: false}
+    center: toronto}
   walkMapStyles = [{
     "featureType": "landscape.natural",
     "elementType": "geometry",
@@ -94,11 +98,17 @@ makeMarkerArray = (walkMap, directionResult, panorama)->
   plotMarkers(walkMap, markerArray, instructionsArray, panorama)
 
 
+
 # Plot markers on map and set bearing at each marker using getBearing (which uses convertToRad).  If the last marker, use same bearing as the previous marker.
 plotMarkers = (walkMap, markerArray, instructionsArray, panorama)->
   octopus = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/32/Poulpo-icon.png'
   chicken = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-2/32/polenta-icon.png'
   starfish = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/48/Pico-icon.png'
+
+  window.octopus = octopus
+  window.chicken = chicken
+  window.starfish = starfish
+
   for i in [0..markerArray.length-1]
     if i==0
       marker = new google.maps.Marker({
@@ -106,7 +116,7 @@ plotMarkers = (walkMap, markerArray, instructionsArray, panorama)->
         map: walkMap,
         icon: starfish
       })
-      lastSelectedMarker = marker
+      # lastSelectedMarker = marker
     else
       marker = new google.maps.Marker({
         position: markerArray[i],
@@ -114,26 +124,41 @@ plotMarkers = (walkMap, markerArray, instructionsArray, panorama)->
         icon: octopus
       })
     marker.myIndex = i
+    markerHandles.push(marker)
     if i < markerArray.length-2
       thisLatLng = markerArray[i]
       nextLatLng = markerArray[i+1]
       bearings[i] = getBearing(thisLatLng.lat(), thisLatLng.lng(), nextLatLng.lat(), nextLatLng.lng())
     # If last marker, set bearing in same direction as penultimate marker
     else bearings[i] = bearings[i-1]
-
-
+# Show streetview at first marker, and corresponding directions
+  streetView.getPanoramaByLocation(markerArray[0], 50, showStreetView)
+  panorama.setPov({ heading: bearings[0], pitch: 0})
+  panorama.setVisible(true)
+  markerHandles[0].setIcon(chicken)
+  lastSelectedMarker = markerHandles[0]
+  $('#directions_box').empty()
+  $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[0] + '</h3>')
+  window.markerHandles = markerHandles
+  window.lastSelectedMarker = lastSelectedMarker
+  window.streetView = streetView
+  window.markerArray = markerArray
+  window.showStreetView = showStreetView
+  window.panorama = panorama
+  #alert(bearings)
+  window.bearings = bearings
 
 # Event listener for click on marker; it triggers streetview for that marker using showStreetView, in the correct orientation
-    google.maps.event.addListener marker, 'click', (event) ->
-      streetView.getPanoramaByLocation(event.latLng, 50, showStreetView)
-      if lastSelectedMarker.myIndex == 0 then lastSelectedMarker.setIcon(starfish)
-      else lastSelectedMarker.setIcon(octopus)
-      panorama.setPov({ heading: bearings[this.myIndex], pitch: 0})
-      panorama.setVisible(true)
-      this.setIcon(chicken)
-      lastSelectedMarker = this
-      $('#directions_box').empty()
-      $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[this.myIndex] + '</h3>')
+    # google.maps.event.addListener marker, 'click', (event) ->
+    #   streetView.getPanoramaByLocation(event.latLng, 50, showStreetView)
+    #   if lastSelectedMarker.myIndex == 0 then lastSelectedMarker.setIcon(starfish)
+    #   else lastSelectedMarker.setIcon(octopus)
+    #   panorama.setPov({ heading: bearings[this.myIndex], pitch: 0})
+    #   panorama.setVisible(true)
+    #   this.setIcon(chicken)
+    #   lastSelectedMarker = this
+    #   $('#directions_box').empty()
+    #   $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[this.myIndex] + '</h3>')
 
 
 showStreetView = (data, status)->
