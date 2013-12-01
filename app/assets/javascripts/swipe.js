@@ -60,8 +60,8 @@
       // if the user swiped more than the minimum length, perform the appropriate action
       if ( swipeLength >= minLength ) {
         calculateAngle();
-        determineSwipeDirection();
-        processingRoutine();
+        getSwipeDirection();
+        doSwipeAction();
       }
     }
     touchCancel(event);
@@ -89,7 +89,7 @@
     if ( swipeAngle < 0 ) { swipeAngle =  360 - Math.abs(swipeAngle); }
   }
 
-  function determineSwipeDirection() {
+  function getSwipeDirection() {
     if ( (swipeAngle <= 45) && (swipeAngle >= 0) ) {
       swipeDirection = 'left';
     } else if ( (swipeAngle <= 360) && (swipeAngle >= 315) ) {
@@ -103,19 +103,19 @@
     }
   }
 
-  function processingRoutine() {
+  function doSwipeAction() {
     var swipedElement = document.getElementById(triggerElementID);
 
-    if ( swipeDirection == 'right' ) {
-      console.log('swiped right');
+    if ( swipeDirection == 'left' ) {
+      console.log('View next marker');
       if (lastSelectedMarker.myIndex == markerHandles.length-1) {
         currentIndex = 0;
       } else {
         currentIndex = lastSelectedMarker.myIndex + 1;
       }
       swipeChangeSV();
-    } else if ( swipeDirection == 'left' ) {
-      console.log('swiped left');
+    } else if ( swipeDirection == 'right' ) {
+      console.log('View previous marker');
       if (lastSelectedMarker.myIndex == 0) {
         currentIndex = markerHandles.length-1;
       } else {
@@ -123,11 +123,11 @@
       }
       swipeChangeSV();
     }
-    else if ( swipeDirection == 'up' ) {
-      console.log('swiped up');
-    } else if ( swipeDirection == 'down' ) {
-      console.log('swiped down');
-    }
+    // else if ( swipeDirection == 'right' ) {
+    //   console.log('swiped right');
+    // } else if ( swipeDirection == 'left' ) {
+    //   console.log('swiped left');
+    // }
   };
 
   function swipeChangeSV() {

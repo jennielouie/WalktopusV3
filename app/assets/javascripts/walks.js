@@ -94,10 +94,11 @@ function mapRoute(){
 //For each step, plot markers along polyline.  Push each marker to markerArray after start_location, and then follow all markers by end_location
 function makeMarkerArray (directionResult){
   var routeData = directionResult.routes[0].legs[0];
+  console.log(routeData);
   markerArray = [];
   instructionsArray = []
   markerArray.push(routeData.steps[0].start_location);
-  instructionsArray.push(routeData.steps[0].instructions);
+  instructionsArray.push('Start at ' + routeData.start_address + ', then ' + routeData.steps[0].instructions);
   for (i = 0; i< routeData.steps.length-1; i++) {
     var pathw = routeData.steps[i].path;
     var markerSpacing = 200;
@@ -107,20 +108,36 @@ function makeMarkerArray (directionResult){
          strokeOpacity: 0.8,
          strokeWeight: 2
     });
-    var thisStepMarkerArray = stepArray.GetPointsAtDistance(markerSpacing);
+    console.log(i);
+
+     thisStepMarkerArray = stepArray.GetPointsAtDistance(markerSpacing);
     var thisStepInstructions = routeData.steps[i].instructions;
+    console.log(thisStepMarkerArray);
       if (thisStepMarkerArray.length>0) {
         for (j=0; j<thisStepMarkerArray.length; j++) {
         markerArray.push(thisStepMarkerArray[j]);
         instructionsArray.push(thisStepInstructions);
         }
       }
-      else {
+
         markerArray.push(routeData.steps[i].end_location);
         instructionsArray.push(routeData.steps[i+1].instructions);
-      }
-  } //for loop
 
+  } //for loop
+// if (i=routeData.steps.length-1) {
+//   if (thisStepMarkerArray.length>0) {
+//     for (j=0; j<thisStepMarkerArray.length; j++) {
+//       markerArray.push(thisStepMarkerArray[j]);
+//       instructionsArray.push(thisStepInstructions);
+//     }
+//   }
+//   else {
+//     markerArray.push(routeData.steps[i].end_location);
+//     instructionsArray.push(routeData.steps[i].instructions);
+//   }
+// }
+  markerArray.push(routeData.end_location);
+  instructionsArray.push('Arrive at ' + routeData.end_address);
   plotMarkers(markerArray);
 }; //function makeMarkerArray
 
@@ -130,7 +147,7 @@ function plotMarkers (markerArray){
   for (var i = 0; i < markerArray.length; i++){
     if (i==0) {
       var marker = new google.maps.Marker({
-        position: markerArray[i],
+        position: markerArray[0],
         map: walkMap,
         icon: starfish
       }); //Marker
