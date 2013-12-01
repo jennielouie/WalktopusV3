@@ -7301,3 +7301,46 @@ Served asset /application.js - 304 Not Modified (10ms)
 
 Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
 Served asset /walks.js - 200 OK (1ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:59:35 -0800
+Connecting to database specified by database.yml
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWalk Load (1.4ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (1.0ms)
+Compiled walks.js  (0ms)  (pid 92554)
+Compiled application.js  (3ms)  (pid 92554)
+Completed 200 OK in 80.5ms (Views: 53.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /walks.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /v3_epoly.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /untitled.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /walks.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:59:36 -0800
+Served asset /application.js - 304 Not Modified (10ms)

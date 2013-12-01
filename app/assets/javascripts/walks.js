@@ -98,7 +98,7 @@ function makeMarkerArray (directionResult){
   instructionsArray = []
   markerArray.push(routeData.steps[0].start_location);
   instructionsArray.push(routeData.steps[0].instructions);
-  for (i = 0; i< routeData.steps.length; i++) {
+  for (i = 0; i< routeData.steps.length-1; i++) {
     var pathw = routeData.steps[i].path;
     var markerSpacing = 200;
     var stepArray = new google.maps.Polyline({
@@ -117,7 +117,7 @@ function makeMarkerArray (directionResult){
       }
       else {
         markerArray.push(routeData.steps[i].end_location);
-        instructionsArray.push(routeData.steps[i].instructions);
+        instructionsArray.push(routeData.steps[i+1].instructions);
       }
   } //for loop
 
