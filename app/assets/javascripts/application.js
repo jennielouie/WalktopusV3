@@ -120,20 +120,18 @@
 
   function processingRoutine() {
     var swipedElement = document.getElementById(triggerElementID);
-    markerHandles = window.markerHandles;
-    lastSelectedMarker = window.lastSelectedMarker;
-    chicken = window.chicken;
-    octopus = window.octopus;
-    starfish = window.starfish;
-    streetView = window.streetView;
-    markerArray = window.markerArray;
-    showStreetView = window.showStreetView;
-    panorama = window.panorama;
-    bearings = window.bearings;
+    // markerHandles = window.markerHandles;
+    // lastSelectedMarker = window.lastSelectedMarker;
+    // chicken = window.chicken;
+    // octopus = window.octopus;
+    // starfish = window.starfish;
+    // streetView = window.streetView;
+    // markerArray = window.markerArray;
+    // showStreetView = window.showStreetView;
+    // panorama = window.panorama;
+    // bearings = window.bearings;
 
     if ( swipeDirection == 'right' ) {
-      console.log(markerHandles);
-      console.log(markerHandles[0]);
       console.log('swiped right');
 
       if (lastSelectedMarker == markerHandles[0]){
@@ -154,6 +152,21 @@
       $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[currentIndex] + '</h3>');
     } else if ( swipeDirection == 'left' ) {
       console.log('swiped left');
+      if (lastSelectedMarker == markerHandles[0]){
+      lastSelectedMarker.setIcon(starfish);}
+      else {lastSelectedMarker.setIcon(octopus);}
+      if (lastSelectedMarker.myIndex == 0) {
+        currentIndex = markerHandles.length-1;
+      }
+      else {currentIndex = lastSelectedMarker.myIndex - 1;}
+      streetView.getPanoramaByLocation(markerArray[currentIndex], 50, showStreetView);
+      panorama.setPov({ heading: bearings[currentIndex], pitch: 0});
+      panorama.setVisible(true);
+      currentMarker = markerHandles[currentIndex];
+      currentMarker.setIcon(chicken);
+      lastSelectedMarker = currentMarker;
+      $('#directions_box').empty();
+      $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[currentIndex] + '</h3>');
     }
     else if ( swipeDirection == 'up' ) {
       console.log('swiped up');
