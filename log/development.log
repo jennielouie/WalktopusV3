@@ -6555,3 +6555,749 @@ ActionController::RoutingError (No route matches [GET] "/assets/images/ajax-load
 
 
   Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/walks" for 127.0.0.1 at 2013-12-01 00:16:23 -0800
+Connecting to database specified by database.yml
+Processing by WalksController#index as HTML
+  [1m[36mWalk Load (0.5ms)[0m  [1mSELECT "walks".* FROM "walks" [0m
+Completed 500 Internal Server Error in 32.0ms
+
+ActionView::MissingTemplate (Missing template walks/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/jenniferlouie/wdi_snakes/WalktopusV3/app/views"
+):
+  actionpack (3.2.15) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.15) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__2349193792234577007__process_action__3502191829682557278__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__918173216560480893__call__874357369839301218__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 50.2ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /walks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /untitled.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /v3_epoly.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /walks.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/images/ajax-loader.gif" for 127.0.0.1 at 2013-12-01 00:16:46 -0800
+Served asset /images/ajax-loader.gif - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ajax-loader.gif"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/walks" for 127.0.0.1 at 2013-12-01 00:16:57 -0800
+Processing by WalksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wp+EcN8Dgl/Tmpo8NEkIliyn1VjVdarTT9f5AtvaG4E=", "walk"=>{"start"=>"louvre, paris", "end"=>"musee d'Orsay, paris"}, "commit"=>"Show Preview"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "walks" ("created_at", "end", "interval", "start", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 01 Dec 2013 08:16:57 UTC +00:00], ["end", "musee d'Orsay, paris"], ["interval", nil], ["start", "louvre, paris"], ["updated_at", Sun, 01 Dec 2013 08:16:57 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/walks/4
+Completed 302 Found in 10.6ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/walks/4" for 127.0.0.1 at 2013-12-01 00:16:57 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mWalk Load (1.3ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered walks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10.9ms (Views: 6.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/walks" for 127.0.0.1 at 2013-12-01 00:17:13 -0800
+Processing by WalksController#index as HTML
+  [1m[35mWalk Load (0.4ms)[0m  SELECT "walks".* FROM "walks" 
+Completed 500 Internal Server Error in 2.1ms
+
+ActionView::MissingTemplate (Missing template walks/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/jenniferlouie/wdi_snakes/WalktopusV3/app/views"
+):
+  actionpack (3.2.15) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.15) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__2349193792234577007__process_action__3502191829682557278__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__918173216560480893__call__874357369839301218__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/walks/27" for 127.0.0.1 at 2013-12-01 00:17:22 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mWalk Load (0.6ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "27"]]
+Completed 404 Not Found in 2.1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Walk with id=27):
+  app/controllers/walks_controller.rb:17:in `show'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:17:27 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWalk Load (0.7ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8.4ms (Views: 6.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:17:27 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:17:28 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWalk Load (0.7ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10.1ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:18:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ajax-loader.gif" for 127.0.0.1 at 2013-12-01 00:18:06 -0800
+Served asset /images/ajax-loader.gif - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ajax-loader.gif"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-01 00:45:27 -0800
+Connecting to database specified by database.yml
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (7.3ms)
+Compiled walks.js  (140ms)  (pid 92232)
+Compiled walks.js  (0ms)  (pid 92232)
+Compiled application.js  (12ms)  (pid 92232)
+Completed 200 OK in 287.1ms (Views: 263.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /untitled.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /walks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /v3_epoly.js - 200 OK (2ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /walks.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /application.js - 200 OK (9ms)
+
+
+Started GET "/assets/images/ajax-loader.gif" for 127.0.0.1 at 2013-12-01 00:45:28 -0800
+Served asset /images/ajax-loader.gif - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ajax-loader.gif"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jenniferlouie/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jenniferlouie/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/walks" for 127.0.0.1 at 2013-12-01 00:45:43 -0800
+Processing by WalksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wp+EcN8Dgl/Tmpo8NEkIliyn1VjVdarTT9f5AtvaG4E=", "walk"=>{"start"=>"Louvre, Paris", "end"=>"Arc de Triomphe, Paris"}, "commit"=>"Show Preview"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "walks" ("created_at", "end", "interval", "start", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 01 Dec 2013 08:45:43 UTC +00:00], ["end", "Arc de Triomphe, Paris"], ["interval", nil], ["start", "Louvre, Paris"], ["updated_at", Sun, 01 Dec 2013 08:45:43 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/walks/5
+Completed 302 Found in 10.3ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/walks/5" for 127.0.0.1 at 2013-12-01 00:45:43 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mWalk Load (1.1ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered walks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11.3ms (Views: 7.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/walks/3" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWalk Load (0.5ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered walks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 56.0ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:48 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWalk Load (0.7ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10.7ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:45:53 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWalk Load (0.7ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8.5ms (Views: 6.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:17 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:47:24 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWalk Load (0.5ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6.3ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.0-rc.1.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /jquery.mobile-1.4.0-rc.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:47:25 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/walks/1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWalk Load (0.7ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Compiled application.css  (1ms)  (pid 92232)
+Compiled walks.js  (0ms)  (pid 92232)
+Compiled application.js  (4ms)  (pid 92232)
+Completed 200 OK in 66.8ms (Views: 64.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2013-12-01 00:49:32 -0800
+Served asset /walks.js - 200 OK (1ms)
