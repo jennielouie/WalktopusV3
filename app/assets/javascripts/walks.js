@@ -5,6 +5,7 @@ var walkMap;
 var markerArray;
 var instructionsArray;
 var panorama;
+var panoOptions;
 var bearings = [];
 var markerHandles =[];
 var lastSelectedMarker =0;
@@ -85,7 +86,7 @@ function mapRoute(){
   directionsService.route(request, function(response, status){
     if (status == google.maps.DirectionsStatus.OK){
       directionsDisplay.setDirections(response);
-      $('#walk_show').append('<h3> Start (star): ' + response.routes[0].legs[0].start_address + '</br>End: ' + response.routes[0].legs[0].end_address + '</br>Click on an octopus to see the street view</h3>');
+      $('#walk_show').append('<h3> Start (star): ' + response.routes[0].legs[0].start_address + '</br>End: ' + response.routes[0].legs[0].end_address + '</br>Swipe to the left for the next step, or swipe right for the previous step</h3>');
       makeMarkerArray(response);
     }
   }); //directionsService.route
@@ -115,27 +116,16 @@ function makeMarkerArray (directionResult){
     console.log(thisStepMarkerArray);
       if (thisStepMarkerArray.length>0) {
         for (j=0; j<thisStepMarkerArray.length; j++) {
-        markerArray.push(thisStepMarkerArray[j]);
-        instructionsArray.push(thisStepInstructions);
+          markerArray.push(thisStepMarkerArray[j]);
+          instructionsArray.push(thisStepInstructions);
         }
       }
 
-        markerArray.push(routeData.steps[i].end_location);
-        instructionsArray.push(routeData.steps[i+1].instructions);
+      markerArray.push(routeData.steps[i].end_location);
+      instructionsArray.push(routeData.steps[i+1].instructions);
 
   } //for loop
-// if (i=routeData.steps.length-1) {
-//   if (thisStepMarkerArray.length>0) {
-//     for (j=0; j<thisStepMarkerArray.length; j++) {
-//       markerArray.push(thisStepMarkerArray[j]);
-//       instructionsArray.push(thisStepInstructions);
-//     }
-//   }
-//   else {
-//     markerArray.push(routeData.steps[i].end_location);
-//     instructionsArray.push(routeData.steps[i].instructions);
-//   }
-// }
+
   markerArray.push(routeData.end_location);
   instructionsArray.push('Arrive at ' + routeData.end_address);
   plotMarkers(markerArray);
@@ -173,9 +163,21 @@ function plotMarkers (markerArray){
     }
   }; //for loop
 // Show streetview at first marker, and corresponding directions
-  streetView.getPanoramaByLocation(markerArray[0], 50, showStreetView);
+
+panoOptions = {
+  position: markerArray[0],
+  linksControl: false,
+  panControl: false,
+  visible:true,
+  disableDefaultUI: true
+};
+
+panorama = new google.maps.StreetViewPanorama(
+  document.getElementById("pano"), panoOptions);
+
+  // streetView.getPanoramaByLocation(markerArray[0], 50, showStreetView);
   panorama.setPov({ heading: bearings[0], pitch: 0});
-  panorama.setVisible(true);
+  // panorama.setVisible(true);
   markerHandles[0].setIcon(chicken);
   lastSelectedMarker = markerHandles[0];
   $('#directions_box').empty();

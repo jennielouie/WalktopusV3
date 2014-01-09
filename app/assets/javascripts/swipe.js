@@ -15,13 +15,6 @@
   var swipeAngle = null;
   var swipeDirection = null;
 
-
-  // The 4 Touch Event Handlers
-
-  // NOTE: the touchStart handler should also receive the ID of the triggering element
-  // make sure its ID is passed in the event call placed in the element declaration, like:
-  // <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
-
   function touchStart(event,elementID) {
     // disable the standard ability to select the touched object
     event.preventDefault();
@@ -123,11 +116,7 @@
       }
       swipeChangeSV();
     }
-    // else if ( swipeDirection == 'right' ) {
-    //   console.log('swiped right');
-    // } else if ( swipeDirection == 'left' ) {
-    //   console.log('swiped left');
-    // }
+
   };
 
   function swipeChangeSV() {
@@ -136,7 +125,15 @@
     } else {
       lastSelectedMarker.setIcon(octopus);
     }
-    streetView.getPanoramaByLocation(markerArray[currentIndex], 50, showStreetView);
+    // streetView.getPanoramaByLocation(markerArray[currentIndex], 50, showStreetView);
+
+    panoOptions = {
+      position: markerArray[currentIndex],
+      linksControl: false,
+      panControl: false,
+      disableDefaultUI: true
+    };
+    panorama = new google.maps.StreetViewPanorama(document.getElementById("pano"), panoOptions);
     panorama.setPov({ heading: bearings[currentIndex], pitch: 0});
     panorama.setVisible(true);
     currentMarker = markerHandles[currentIndex];
