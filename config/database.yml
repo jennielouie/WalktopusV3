@@ -50,5 +50,3 @@ production:
   encoding: unicode
   database: WalktopusV3_production
   pool: 5
-  username: jlouie
-  password:
