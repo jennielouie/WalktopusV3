@@ -1,0 +1,28 @@
+<div id="index_page">
+    <h2>Walktopus Walking Routes</h2>
+
+ </div>
+
+        <div id="walk_summary">
+            <table>
+              <thead>
+                  <tr>
+<!--                       <th>Walk ID</th>
+                      <th>Starting Location</th>
+                      <th>Ending Location</th> -->
+                      <th>View</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+              <% @walks.each do |walk| %>
+                 <tr>
+<!--                     <td><%=walk.id%></td>
+                    <td><%=walk.start%></td>
+                    <td><%=walk.end%></td> -->
+                    <td><a href="walks/<%=walk.id %>">#<%=walk.id%>: From <%=walk.start%> to <%=walk.end%></a></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+        </div>
