@@ -11,9 +11,31 @@ var markerHandles =[];
 var lastSelectedMarker =0;
 var currentIndex =0;
 var currentMarker =0;
-var octopus = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/32/Poulpo-icon.png';
-var chicken = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-2/32/polenta-icon.png';
-var starfish = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/48/Pico-icon.png';
+var octopus = new google.maps.MarkerImage(
+    'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/32/Poulpo-icon.png',
+    new google.maps.Size(36,36), //size
+    null, //origin
+    null, //anchor
+    new google.maps.Size(36,36) //scale
+);
+var chicken = new google.maps.MarkerImage(
+    'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-2/32/polenta-icon.png',
+    new google.maps.Size(36,36), //size
+    null, //origin
+    null, //anchor
+    new google.maps.Size(36,36) //scale
+);
+
+var starfish = new google.maps.MarkerImage(
+    'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/48/Pico-icon.png',
+    new google.maps.Size(36,36), //size
+    null, //origin
+    null, //anchor
+    new google.maps.Size(36,36) //scale
+);
+// var octopus = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/32/Poulpo-icon.png';
+// var chicken = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-2/32/polenta-icon.png';
+// var starfish = 'http://icons.iconarchive.com/icons/charlotte-schmidt/zootetragonoides-4/48/Pico-icon.png';
 
 // Initialize map and displays, then calls mapRoute function
 function initialize(){
@@ -74,6 +96,10 @@ function initialize(){
   directionsDisplay.setMap(walkMap);
   directionsDisplay.setPanel(document.getElementById('directions_box'));
   mapRoute();
+
+
+
+
 }; //function initialize
 
 // mapRoute is called by function initialize, makes request for directions, then calls makeMarkerArray function to add markers
@@ -162,8 +188,8 @@ function plotMarkers (markerArray){
       bearings[i] = bearings[i-1];
     }
   }; //for loop
-// Show streetview at first marker, and corresponding directions
 
+// Show streetview at first marker, and corresponding directions
 panoOptions = {
   position: markerArray[0],
   linksControl: false,
@@ -181,7 +207,7 @@ panorama = new google.maps.StreetViewPanorama(
   markerHandles[0].setIcon(chicken);
   lastSelectedMarker = markerHandles[0];
   $('#directions_box').empty();
-  $('#directions_box').append('<h3>Directions:</h3></br><h3>' + instructionsArray[0] + '</h3>');
+  $('#directions_box').append('<h4>Directions:</h4></br><h4>' + instructionsArray[0] + '</h4>');
 }; //function plotMarkers
 
 
@@ -212,6 +238,9 @@ function convertToRad(Value){
   return Value * Math.PI/180;
 } //function convertToRad
 
+
+//
+
 // Add event listeners for window load and resize
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener (window, "resize", function(event){
@@ -221,3 +250,6 @@ google.maps.event.addDomListener (window, "resize", function(event){
   walkMap.setCenter(center);
   console.log('resized');
 });
+
+
+

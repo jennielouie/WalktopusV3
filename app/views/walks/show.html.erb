@@ -3,14 +3,16 @@ var walk_start="<%=@walk.start%>";
 var walk_end="<%=@walk.end%>";
 </script>
 
-<a href = '/'>Return to homepage</a>
-
 <div class="row">
-  <div id="directions_box" style='height:200px'><h2>Directions:</h2></br></div>
+   <div class="col-xs-12 col-sm-6 col-md-6">
+     <div id="pano" style='height:300px'></div>
+   </div>
+
+   <div class="col-xs-12 col-sm-6 col-md-6">
+      <div id="map-canvas" style='height:300px'> </div>
+   </div>
 </div>
 
-
-<div class="row">
-  <div id="pano" style='height:300px'></div>
-  <div id="map-canvas" style='height:200px'> </div>
+<div class="row hidden-xs">
+   <div id="directions_box"><h2>Directions:</h2></br></div>
 </div>
