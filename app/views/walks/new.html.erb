@@ -1,42 +1,21 @@
-<!--
+
 <div id="walk_form">
   <h2 style='text-align:center'>Preview a New Walk</h2>
-  <%#= form_for @walk, role: "form" do  |f|  %>
+  <%= form_for @walk, role: "form" do  |f|  %>
   <div class="form-group">
-      <%#=f.label "Starting from?" %>
-    <%#= f.text_field :start, :class=> "form-control input-lg",:placeholder =>"Enter starting address or landmark" %>
+      <%=f.label "Starting from?" %>
+    <%= f.text_field :start, :class=> "form-control input-lg",:placeholder =>"Enter starting address or landmark" %>
   </div>
 
   <div class = "form-group">
-    <%#= f.label "Walking to where?" %> <br>
-    <%#=f.text_field :end, :class => "form-control input-lg", :placeholder => "Enter destination address or landmark" %>
+    <%= f.label "Walking to where?" %> <br>
+    <%=f.text_field :end, :class => "form-control input-lg", :placeholder => "Enter destination address or landmark" %>
   </div>
 
   <div class = "form-action">
-    <%#= f.submit :class => "btn btn-primary btn-lg btn-block" %>
+    <%= f.submit :class => "btn btn-primary btn-lg btn-block" %>
   </div>
 
 </div>
-<%# end %>
+<% end %>
 
- -->
-
- </br>
-</br>
-
-<div>
-  <h1 style='text-align:center'>Walktopus V3</h1>
-</div>
-
-<div id="walk_form">
-  <h2 style='text-align:center'>Preview a New Walk</h2>
-  <%= form_for @walk do  |f|  %>
-    <%=f.label :start %> <br>
-    <%= f.text_field :start, :placeholder =>"Starting from?" %>
-    <br>
-    <%= f.label :end %> <br>
-    <%=f.text_field :end, :placeholder => "Ending where?" %>
-    <br>
-    <%= f.submit  "Show Preview" %>
-  <% end %>
-</div>

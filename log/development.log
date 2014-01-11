@@ -20001,3 +20001,235 @@ Served asset /walks.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-11 11:11:29 -0800
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Connecting to database specified by database.yml
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 76.9ms (Views: 50.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/swipe.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /swipe.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /walks.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /untitled.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /v3_epoly.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /walks.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-11 11:16:07 -0800
+Served asset /application.js - 304 Not Modified (9ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/walks" for 127.0.0.1 at 2014-01-11 11:21:16 -0800
+Processing by WalksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UcLGjKfPiOSLksUhJMOp8IKyw10qKHnCflmkfcAATE4=", "walk"=>{"start"=>"130 west central ave, moorestown nj", "end"=>"30 east central ave, moorestown nj"}, "commit"=>"Show Preview"}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (16.8ms)[0m  INSERT INTO "walks" ("created_at", "end", "interval", "start", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sat, 11 Jan 2014 19:21:17 UTC +00:00], ["end", "30 east central ave, moorestown nj"], ["interval", nil], ["start", "130 west central ave, moorestown nj"], ["updated_at", Sat, 11 Jan 2014 19:21:17 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/walks/44
+Completed 302 Found in 34.0ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/walks/44" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mWalk Load (1.8ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "44"]]
+  Rendered walks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21.9ms (Views: 13.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/swipe.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /swipe.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-11 11:21:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-11 11:31:46 -0800
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 76.0ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /walks.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/swipe.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /swipe.js - 200 OK (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /untitled.js - 200 OK (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /v3_epoly.js - 200 OK (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /walks.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-11 11:31:47 -0800
+Served asset /application.js - 200 OK (0ms)
+
+
+Started POST "/walks" for 127.0.0.1 at 2014-01-11 11:32:41 -0800
+Processing by WalksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BozrIPMSEcV3onQUxqFGkZ+P8uMqbnfhVIe/IFBio0=", "walk"=>{"start"=>"130 west central ave, moorestown nj", "end"=>"30 east central ave, moorestown nj"}, "commit"=>"Show Preview"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "walks" ("created_at", "end", "interval", "start", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sat, 11 Jan 2014 19:32:41 UTC +00:00], ["end", "30 east central ave, moorestown nj"], ["interval", nil], ["start", "130 west central ave, moorestown nj"], ["updated_at", Sat, 11 Jan 2014 19:32:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/walks/45
+Completed 302 Found in 6.7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/walks/45" for 127.0.0.1 at 2014-01-11 11:32:41 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mWalk Load (0.5ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "45"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8.6ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-11 11:37:19 -0800
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 13.5ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-11 11:37:28 -0800
+Processing by WalksController#new as HTML
+  Rendered walks/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 14.0ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/walks" for 127.0.0.1 at 2014-01-11 11:37:50 -0800
+Processing by WalksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BozrIPMSEcV3onQUxqFGkZ+P8uMqbnfhVIe/IFBio0=", "walk"=>{"start"=>"130 west central ave, moorestown nj", "end"=>"30 east central ave, moorestown nj"}, "commit"=>"Show Preview"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "walks" ("created_at", "end", "interval", "start", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sat, 11 Jan 2014 19:37:50 UTC +00:00], ["end", "30 east central ave, moorestown nj"], ["interval", nil], ["start", "130 west central ave, moorestown nj"], ["updated_at", Sat, 11 Jan 2014 19:37:50 UTC +00:00]]
+  [1m[36m (217.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/walks/46
+Completed 302 Found in 220.4ms (ActiveRecord: 218.3ms)
+
+
+Started GET "/walks/46" for 127.0.0.1 at 2014-01-11 11:37:50 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mWalk Load (0.8ms)[0m  SELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1  [["id", "46"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8.8ms (Views: 6.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/walks/43" for 127.0.0.1 at 2014-01-11 11:46:49 -0800
+Processing by WalksController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mWalk Load (0.9ms)[0m  [1mSELECT "walks".* FROM "walks" WHERE "walks"."id" = $1 LIMIT 1[0m  [["id", "43"]]
+  Rendered walks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7.9ms (Views: 6.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/walks.css?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /walks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/swipe.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /swipe.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/untitled.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /untitled.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/v3_epoly.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /v3_epoly.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/walks.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /walks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-11 11:46:50 -0800
+Served asset /application.js - 304 Not Modified (1ms)
